@@ -21,7 +21,7 @@ body{
     background-color: var(--dark);
     color: var(--light);
     font-family: "consolas";
-    font-size: 250%;
+    font-size: 150%;
 }
 
 @keyframes h1 {
