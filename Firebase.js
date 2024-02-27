@@ -21,7 +21,6 @@ const dataRef = ref(db, "My data")
 function getData() {
   return get(dataRef)
     .then(d => d.val())
-    .then(d => d)
 }
 
 function setData(data) {

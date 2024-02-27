@@ -11,14 +11,13 @@ const dataP = getElement("data")
 const dataBS = getElement("setdata")
 const dataBA = getElement("adddata")
 const input = getElement("input")
+var hide = false
 
-async function showData() {
-  const content = await getData()
-  dataP.innerHTML = content
-  console.log(content)
+function showData() {
+  hide = false
 }
 function hideData() {
-  dataP.innerHTML = null
+  hide = true
 }
 function SetData() {
   setData(input.value)
@@ -28,3 +27,16 @@ function SetData() {
 dataBG.addEventListener("click", showData)
 dataBH.addEventListener("click", hideData)
 dataBS.addEventListener("click", SetData)
+
+async function outputData() {
+  dataP.innerHTML = await getData()
+}
+
+function loop() {
+  if(!hide) { outputData() }
+  else { dataP.innerHTML = null }
+
+  requestAnimationFrame(loop)
+}
+
+loop()
