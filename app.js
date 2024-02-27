@@ -23,14 +23,23 @@ function SetData() {
   setData(input.value)
   input.value = null
 }
+function AddData() {
+  addData(input.value)
+  input.value = null
+}
 
 dataBG.addEventListener("click", showData)
 dataBH.addEventListener("click", hideData)
 dataBS.addEventListener("click", SetData)
+dataBA.addEventListener("click", AddData)
 
 async function outputData() {
   dataP.innerHTML = await getData()
 }
+
+
+
+
 
 function loop() {
   if(!hide) { outputData() }
