@@ -4,8 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My first app</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <h1>Web server</h1>
+    <div id="container">
+        <h3>Realtime Data</h3>
+        <div>
+            <button id="showdata">Get data</button>
+            <button id="hidedata">Hide data</button>
+        </div>
+        <p id="data"></p>
+        <hr>
+        <h3>Handle Data</h3>
+        <input id="input" type="text" placeholder="Input text">
+        <div>
+            <button id="setdata">Set data</button>
+            <button id="adddata">Add data</button>
+        </div>
+    </div>
+
+    <script type="module" src="./Firebase.js"></script>
     <script type="module" src="./app.js" defer></script>
 </body>
 </html>
