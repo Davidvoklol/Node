@@ -1,5 +1,8 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getDatabase, ref, get, push, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"
+
+import { getAuth }
+from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"
 
 const firebaseConfig = {
   apiKey: "AIzaSyD00nvub_92O_R1uc_JrwThKBH8SIvDCow",
@@ -11,26 +14,7 @@ const firebaseConfig = {
   appId: "1:344916382383:web:a59363df5a5ec2c8aa3a5a"
 };
 
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig)
+const auth = getAuth()
 
-const db = getDatabase(app)
-
-const dataRef = ref(db, "My data")
-
-
-function getData() {
-  return get(dataRef)
-    .then(d => d.val())
-}
-
-function setData(data) {
-  set(dataRef, data)
-    .then(console.log("new data set"))
-}
-
-function addData(data) {
-  push(dataRef, data)
-    .then(console.log("new data added"))
-}
-
-export { app, db, dataRef, getData, setData, addData }
+export { app, auth }
