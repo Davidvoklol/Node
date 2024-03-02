@@ -10,6 +10,11 @@ from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
 const db = getDatabase(app)
 
+const userUID = document.getElementById("uid")
+const userNAME = document.getElementById("name")
+const userEMAIL = document.getElementById("e-mail")
+const login = document.getElementById("login")
+const logout = document.getElementById("logout")
 
 function setData(ref, data) {
     try {
@@ -39,14 +44,3 @@ function deleteData(ref) {
     }
     catch{ console.log("Remove: Failed") }
 }
-
-
-
-
-getData(ref(db))
-    .then(d => {
-        try{
-            console.log(d)
-        }
-        catch { console.log("Error") }
-    })

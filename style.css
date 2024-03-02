@@ -11,5 +11,14 @@
 }
 
 body{
+    color: var(--light);
     background-color: var(--dark);
+}
+
+#userContainer{
+    border: 2px solid var(--light-light);
+    border-bottom-right-radius: 1em;
+    padding: 0.5em;
+    width: fit-content;
+    height: fit-content;
 }
