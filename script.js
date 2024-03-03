@@ -9,7 +9,6 @@ from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
 
 const db = getDatabase(app)
-var Ref = ref(db)
 
 function setData(ref, data) {
     try {
@@ -40,11 +39,5 @@ function deleteData(ref) {
     }
     catch{ console.log("Remove: Failed") }
 }
-
-
-const serverName = document.getElementById("serverName")
-const index = app._options.projectId.lastIndexOf("-")
-serverName.innerHTML = app._options.projectId.substring(0, index)
-
 
 
