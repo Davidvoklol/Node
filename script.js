@@ -9,12 +9,7 @@ from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
 
 const db = getDatabase(app)
-
-const userUID = document.getElementById("uid")
-const userNAME = document.getElementById("name")
-const userEMAIL = document.getElementById("e-mail")
-const login = document.getElementById("login")
-const logout = document.getElementById("logout")
+var Ref = ref(db)
 
 function setData(ref, data) {
     try {
@@ -32,7 +27,8 @@ function addData(ref, data) {
 }
 async function getData(ref) {
     const data = await get(ref)
-    return data.toJSON()
+    if(data.toJSON() == null) { return "no data found" }
+    else { return data.toJSON() }
 }
 function deleteData(ref) {
     try{
@@ -44,3 +40,11 @@ function deleteData(ref) {
     }
     catch{ console.log("Remove: Failed") }
 }
+
+
+const serverName = document.getElementById("serverName")
+const index = app._options.projectId.lastIndexOf("-")
+serverName.innerHTML = app._options.projectId.substring(0, index)
+
+
+
